@@ -5,15 +5,20 @@
 
 #include "insurance.h"
 
-Insurance::Insurance(const string &itsName,
-                     map <Client*, vector <Vehicle*>> * vehicleContracts)
-    : itsName(itsName),
-      itsVehicleContracts(vehicleContracts)
-{}
+Insurance::Insurance(const string &itsName)
+    : itsName(itsName)
+{
+    itsVehicleContracts = new map <Client*, vector <Vehicle*>>;
+}
 
 
 Insurance::~Insurance()
-{}
+{
+    for (map<Client*, vector<Vehicle*>>::iterator it = itsVehicleContracts->begin();
+         it != itsVehicleContracts->end();
+         ++it )
+    {it = itsVehicleContracts->erase(it);}
+}
 
 
 /*
@@ -22,7 +27,7 @@ Insurance::~Insurance()
  */
 void Insurance::addContract(Client *client, Vehicle *vehicle)
 {
-    map<Client*, vector<Vehicle*>>:: iterator it;
+    map<Client*, vector<Vehicle*>>::iterator it;
     it = itsVehicleContracts->find(client); // iterateur qui trouve le client ou prend nullptr
 
     if(it != itsVehicleContracts->end()) // si client trouvé (it != nullptr)
@@ -81,21 +86,20 @@ void Insurance::removeContract(Client *client, Vehicle *vehicle)
  */
 void Insurance::displayContracts()
 {
-    map<Client*, vector<Vehicle*>>:: iterator it = itsVehicleContracts->begin();
+    map<Client*, vector<Vehicle*>>::iterator it = itsVehicleContracts->begin();
     while(it != itsVehicleContracts->end()){
         it->first->display();
-        vector<Vehicle*>::iterator iit = it->second.begin();
-        while (iit != it->second.end()){
-            iit.display();
-            ++iit;
-        }
+
+        for(Vehicle * v : it->second)
+            v->display();
+
         ++it;
     }
 }
 
 
 /*
- * affiche la liste des véhicules assurés pour un client donné
+ * affiche la liste des véhicules assurés pour un client donné.
  */
 void Insurance::displayContractsClient(Client *client)
 {
@@ -104,10 +108,8 @@ void Insurance::displayContractsClient(Client *client)
 
     if(it != itsVehicleContracts->end()) // si client trouvé (it != nullptr)
     {
-        vector<Vehicle*>::iterator iit = it->second.begin();
-        while (iit != it->second.end()){
-            iit.display();
-            ++iit;
-        }
+        client->display();
+        for(Vehicle * v : it->second)
+            v->display();
     }
 }

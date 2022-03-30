@@ -25,8 +25,7 @@ private:
     map <Client*, vector <Vehicle*>> * itsVehicleContracts;
 
 public:
-    Insurance(const string &itsName,
-              map <Client*, vector <Vehicle*>> * vehicleContracts);
+    Insurance(const string &itsName);
     ~Insurance();
 
     void addContract(Client* client, Vehicle* vehicle);
