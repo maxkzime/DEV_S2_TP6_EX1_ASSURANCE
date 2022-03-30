@@ -12,6 +12,7 @@
 int main()
 {
     // >----------------------- JEU DE TESTS -----------------------------<
+    cout << '\n' << " >----------------------- JEU DE TESTS -----------------------------< " << '\n';
 
     // Tests ajouts clients
     Client * cyril = new Client("Cyril", "Bonnard", "La Rochelle");
@@ -30,24 +31,28 @@ int main()
     laSurance.addContract(nils,leBolide);
 
     // Test affichage tous les contrats
+    cout << '\n' << " ------ Test affichage tous les contrats ------ " << '\n';
     laSurance.displayContracts();
 
     // Test ajout d'un véhicule + contrat puis affichage
+    cout << '\n' << " ------ Test ajout d'un véhicule + contrat puis affichage ------ " << '\n';
     MotorCycle * laDeuxiemeMotoDECyrile = new MotorCycle(1,"VroumVroum22","JAUNE","511",1666,100);
     laSurance.addContract(cyril,laDeuxiemeMotoDECyrile);
     laSurance.displayContracts();
 
     // Test suppression d'un contrat puis affichage
+    cout << '\n' << " ------ Test suppression d'un contrat puis affichage ------ " << '\n';
     laSurance.removeContract(cyril,laDeuxiemeMotoDECyrile);
     laSurance.displayContracts();
 
     // Test affichage contrats d'un client avant et après ajout d'un nouveau contrat
+    cout << '\n' << " ------ Test affichage contrats d'un client avant et après ajout d'un nouveau contrat ------ " << '\n';
     laSurance.displayContractsClient(nils);
     MotorCycle * laMotoANinou = new MotorCycle(18,"pffioooooouuu","VertE","4",250,5);
     laSurance.addContract(nils,laMotoANinou);
     laSurance.displayContractsClient(nils);
 
-
+    cout << '\n' << " >----------------------- JEU DE TESTS -----------------------------< " << '\n';
     // >----------------------- JEU DE TESTS -----------------------------<
 
     return 0;

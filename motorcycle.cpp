@@ -30,10 +30,11 @@ MotorCycle::MotorCycle(int itsCapacity,
  */
 void MotorCycle::display()
 {
-    cout << "Marque : "                 << itsBrand                << '\n'
+    cout << " ------- Moto : ------- "                             << '\n'
+         << "Marque : "                 << itsBrand                << '\n'
          << "Model : "                  << itsModel                << '\n'
          << "Immatriculation : "        << itsRegistrationPlate    << '\n'
          << "Année de construction : "  << itsConstructionYear     << '\n'
          << "Puissance (en chevaux) : " << itsHP                   << '\n'
-         << "Cylindrée : "              << itsCapacity             << "\n\n";
+         << "Cylindrée : "              << itsCapacity             << "\n\n\n";
 }

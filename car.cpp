@@ -30,10 +30,11 @@ Car::Car(int itsNbSeats,
  */
 void Car::display()
 {
-    cout << "Marque : "                 << itsBrand                << '\n'
+    cout << " ------- Voiture : ------- "                          << '\n'
+         << "Marque : "                 << itsBrand                << '\n'
          << "Model : "                  << itsModel                << '\n'
          << "Immatriculation : "        << itsRegistrationPlate    << '\n'
          << "Année de construction : "  << itsConstructionYear     << '\n'
          << "Puissance (en chevaux) : " << itsHP                   << '\n'
-         << "Nombre de places : "       << itsNbSeats              << "\n\n";
+         << "Nombre de places : "       << itsNbSeats              << "\n\n\n";
 }

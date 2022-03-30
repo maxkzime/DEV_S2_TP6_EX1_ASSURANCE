@@ -30,10 +30,11 @@ Lorry::Lorry(int itsAutorisedLoad,
  */
 void Lorry::display()
 {
-    cout << "Marque : "                 << itsBrand                << '\n'
+    cout << " ------- Lorry : ------- "                            << '\n'
+         << "Marque : "                 << itsBrand                << '\n'
          << "Model : "                  << itsModel                << '\n'
          << "Immatriculation : "        << itsRegistrationPlate    << '\n'
          << "Année de construction : "  << itsConstructionYear     << '\n'
          << "Puissance (en chevaux) : " << itsHP                   << '\n'
-         << "Charge autorisée : "       << itsAutorisedLoad        << "\n\n";
+         << "Charge autorisée : "       << itsAutorisedLoad        << "\n\n\n";
 }

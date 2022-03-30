@@ -21,7 +21,8 @@ Client::Client(const string &itsForename,
  */
 void Client::display()
 {
-    cout << "Prénom : "     << itsForename  << '\n'
+    cout << '\n' <<" ------- Le Client : ------- " << '\n'
+         << "Prénom : "     << itsForename  << '\n'
          << "Nom : "        << itsLastname  << '\n'
          << "Adresse : "    << itsAddress   << "\n\n";
 }

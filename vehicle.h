@@ -6,10 +6,10 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
-#include <insurance.h>
+#include <string>
 #include <iostream>
 
-using std::cout;
+using std::cout, std::string;
 
 class Vehicle
 {

@@ -5,7 +5,6 @@
 
 #include "vehicle.h"
 
-
 Vehicle::Vehicle(const string &itsBrand,
                  const string &itsModel,
                  const string &itsRegistrationPlate,
